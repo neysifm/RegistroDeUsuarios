@@ -44,16 +44,20 @@
             this.ButtonEditar = new System.Windows.Forms.Button();
             this.ErrorProviderNombre = new System.Windows.Forms.ErrorProvider(this.components);
             this.ErrorProviderContraseña = new System.Windows.Forms.ErrorProvider(this.components);
+            this.NumericUpDownID = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderContraseña)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDownID)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(346, 79);
+            this.pictureBox1.Location = new System.Drawing.Point(363, 81);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(251, 214);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -64,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 114);
+            this.label1.Location = new System.Drawing.Point(46, 138);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 47;
@@ -80,16 +84,16 @@
             // 
             // TextBoxNombre
             // 
-            this.TextBoxNombre.Location = new System.Drawing.Point(112, 111);
+            this.TextBoxNombre.Location = new System.Drawing.Point(112, 135);
             this.TextBoxNombre.Name = "TextBoxNombre";
-            this.TextBoxNombre.Size = new System.Drawing.Size(228, 20);
+            this.TextBoxNombre.Size = new System.Drawing.Size(255, 20);
             this.TextBoxNombre.TabIndex = 50;
             // 
             // TextBoxContraseña
             // 
             this.TextBoxContraseña.Location = new System.Drawing.Point(112, 173);
             this.TextBoxContraseña.Name = "TextBoxContraseña";
-            this.TextBoxContraseña.Size = new System.Drawing.Size(228, 20);
+            this.TextBoxContraseña.Size = new System.Drawing.Size(255, 20);
             this.TextBoxContraseña.TabIndex = 51;
             // 
             // label3
@@ -114,7 +118,7 @@
             // 
             this.DateTimePickerFecha.Location = new System.Drawing.Point(140, 217);
             this.DateTimePickerFecha.Name = "DateTimePickerFecha";
-            this.DateTimePickerFecha.Size = new System.Drawing.Size(200, 20);
+            this.DateTimePickerFecha.Size = new System.Drawing.Size(227, 20);
             this.DateTimePickerFecha.TabIndex = 55;
             // 
             // label5
@@ -135,11 +139,11 @@
             this.ButtonBuscar.TabIndex = 57;
             this.ButtonBuscar.Text = "Buscar";
             this.ButtonBuscar.UseVisualStyleBackColor = true;
-            this.ButtonBuscar.Click += new System.EventHandler(this.button1_Click);
+            this.ButtonBuscar.Click += new System.EventHandler(this.Button1_Click);
             // 
             // ButtonGuardar
             // 
-            this.ButtonGuardar.Location = new System.Drawing.Point(157, 301);
+            this.ButtonGuardar.Location = new System.Drawing.Point(130, 301);
             this.ButtonGuardar.Name = "ButtonGuardar";
             this.ButtonGuardar.Size = new System.Drawing.Size(75, 23);
             this.ButtonGuardar.TabIndex = 58;
@@ -149,7 +153,7 @@
             // 
             // ButtonEditar
             // 
-            this.ButtonEditar.Location = new System.Drawing.Point(265, 301);
+            this.ButtonEditar.Location = new System.Drawing.Point(211, 301);
             this.ButtonEditar.Name = "ButtonEditar";
             this.ButtonEditar.Size = new System.Drawing.Size(75, 23);
             this.ButtonEditar.TabIndex = 59;
@@ -165,11 +169,39 @@
             // 
             this.ErrorProviderContraseña.ContainerControl = this;
             // 
+            // NumericUpDownID
+            // 
+            this.NumericUpDownID.Location = new System.Drawing.Point(112, 95);
+            this.NumericUpDownID.Name = "NumericUpDownID";
+            this.NumericUpDownID.Size = new System.Drawing.Size(40, 20);
+            this.NumericUpDownID.TabIndex = 60;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(72, 102);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 13);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "ID:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(292, 301);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 62;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 399);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.NumericUpDownID);
             this.Controls.Add(this.ButtonEditar);
             this.Controls.Add(this.ButtonGuardar);
             this.Controls.Add(this.ButtonBuscar);
@@ -188,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderContraseña)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDownID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,6 +241,9 @@
         private System.Windows.Forms.Button ButtonEditar;
         private System.Windows.Forms.ErrorProvider ErrorProviderNombre;
         private System.Windows.Forms.ErrorProvider ErrorProviderContraseña;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown NumericUpDownID;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -25,10 +25,12 @@ namespace RegistroDeUsuarios
 
         private Usuarios LlenarClase()
         {
-            Usuarios user = new Usuarios();
-            user.Nombre = TextBoxNombre.Text;
-            user.Clave = TextBoxContraseña.Text;
-            user.FechaIngreso = DateTimePickerFecha.Value;
+            Usuarios user = new Usuarios
+            {
+                Nombre = TextBoxNombre.Text,
+                Clave = TextBoxContraseña.Text,
+                FechaIngreso = DateTimePickerFecha.Value
+            };
             return user;
         }
 
@@ -48,14 +50,14 @@ namespace RegistroDeUsuarios
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            if (BLL.UsuariosBLL.Buscar(Convert.ToInt32(IDnumericUpDown.Value)) == null)
+            if (BLL.UsuariosBLL.Buscar(Convert.ToInt32(NumericUpDownID.Value)) == null)
             {
                 MessageBox.Show("Usuario no encontrado");
                 return;
             }
-            var user = BLL.UsuariosBLL.Buscar(Convert.ToInt32(IDnumericUpDown.Value));
+            var user = BLL.UsuariosBLL.Buscar(Convert.ToInt32(NumericUpDownID.Value));
             TextBoxNombre.Text = user.Nombre;
             TextBoxContraseña.Text = user.Clave;
             DateTimePickerFecha.Value = user.FechaIngreso;
@@ -80,6 +82,6 @@ namespace RegistroDeUsuarios
         {
 
         }
-    }
+     
     }
 }
