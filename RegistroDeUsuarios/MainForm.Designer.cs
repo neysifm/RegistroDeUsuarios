@@ -46,20 +46,22 @@
             this.ErrorProviderContraseña = new System.Windows.Forms.ErrorProvider(this.components);
             this.NumericUpDownID = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ButtonEliminar = new System.Windows.Forms.Button();
+            this.ErrorProviderID = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderContraseña)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDownID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderID)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(363, 81);
+            this.pictureBox1.Location = new System.Drawing.Point(364, 83);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(251, 214);
+            this.pictureBox1.Size = new System.Drawing.Size(250, 212);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 46;
             this.pictureBox1.TabStop = false;
@@ -185,21 +187,26 @@
             this.label6.TabIndex = 61;
             this.label6.Text = "ID:";
             // 
-            // button1
+            // ButtonEliminar
             // 
-            this.button1.Location = new System.Drawing.Point(292, 301);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 62;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ButtonEliminar.Location = new System.Drawing.Point(292, 301);
+            this.ButtonEliminar.Name = "ButtonEliminar";
+            this.ButtonEliminar.Size = new System.Drawing.Size(75, 23);
+            this.ButtonEliminar.TabIndex = 62;
+            this.ButtonEliminar.Text = "Eliminar";
+            this.ButtonEliminar.UseVisualStyleBackColor = true;
+            this.ButtonEliminar.Click += new System.EventHandler(this.ButtonEliminar_Click);
+            // 
+            // ErrorProviderID
+            // 
+            this.ErrorProviderID.ContainerControl = this;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 399);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ButtonEliminar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.NumericUpDownID);
             this.Controls.Add(this.ButtonEditar);
@@ -221,6 +228,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderContraseña)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDownID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderID)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +251,8 @@
         private System.Windows.Forms.ErrorProvider ErrorProviderContraseña;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown NumericUpDownID;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ButtonEliminar;
+        private System.Windows.Forms.ErrorProvider ErrorProviderID;
     }
 }
 
