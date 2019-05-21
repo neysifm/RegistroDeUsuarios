@@ -13,25 +13,21 @@ namespace RegistroDeUsuarios.BLL
 {
     public class UsuariosBLL
     {
-        public static EntityState EntryState { get; private set; }
-
-        public static bool Guardar(Usuarios User)
+        public static bool Guardar(Usuarios usuario)
         {
             bool paso = false;
-            Contexto db = new Contexto();
+            Contexto contexto = new Contexto();
             try
             {
-                if (db.User.Add(User) != null)
+                if (contexto.Usuario.Add(usuario) != null)
                 {
-                    db.SaveChanges();
+                    contexto.SaveChanges();
                     paso = true;
                 }
-
-
+                contexto.Dispose();
             }
             catch (Exception)
             {
-
                 throw;
             }
             return paso;
@@ -40,76 +36,74 @@ namespace RegistroDeUsuarios.BLL
         public static bool Eliminar(int Id)
         {
             bool paso = false;
-            Contexto db = new Contexto();
+            Contexto contexto = new Contexto();
             try
             {
-                var eliminar = db.User.Find(Id);
-                db.Entry(eliminar).State = EntityState.Deleted;
-                if (db.SaveChanges() > 0)
+                Usuarios eliminar = contexto.Usuario.Find(Id);
+                contexto.Usuario.Remove(eliminar);
+                if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
                 }
+                contexto.Dispose();
             }
             catch (Exception)
             {
-
                 throw;
             }
             return paso;
         }
 
-        public static bool Modificar(Usuarios user)
+        public static bool Modificar(Usuarios usuario)
         {
             bool paso = false;
-            Contexto db = new Contexto();
+            Contexto contexto = new Contexto();
             try
             {
-                db.Entry(user).State = EntityState.Modified;
-                if (db.SaveChanges() > 0)
+                contexto.Entry(usuario).State = EntityState.Modified;
+                if (contexto.SaveChanges() > 0)
                 {
-                    paso = true;
+                      paso = true;
                 }
+                contexto.Dispose();
             }
             catch (Exception)
             {
-
                 throw;
             }
-
             return paso;
         }
 
         public static Usuarios Buscar(int id)
         {
-            Usuarios user = new Usuarios();
-            Contexto db = new Contexto();
+            Contexto contexto = new Contexto();
+            Usuarios usuario = new Usuarios();
             try
             {
-                user = db.User.Find(id);
+                usuario = contexto.Usuario.Find(id);
+                contexto.Dispose();
             }
             catch (Exception)
             {
-
-                throw;
-            }
-            return user;
-        }
-
-        public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> user)
-        {
-            List<Usuarios> usuario = new List<Usuarios>();
-            Contexto db = new Contexto();
-            try
-            {
-                usuario = db.User.Where(user).ToList();
-            }
-            catch (Exception)
-            {
-
                 throw;
             }
             return usuario;
         }
 
+        public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> expression)
+        {
+            List<Usuarios> usuario = new List<Usuarios>();
+            Contexto contexto = new Contexto();
+            try
+            {
+                usuario = contexto.Usuario.Where(expression).ToList();
+                contexto.Dispose();
+            }
+            catch (Exception)
+            {            
+                throw;
+            }
+            return usuario;
+        }
     }
 }

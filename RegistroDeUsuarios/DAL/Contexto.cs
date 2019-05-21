@@ -10,7 +10,7 @@ namespace RegistroDeUsuarios.DAL
 {
     public class Contexto : DbContext
     {
-        public DbSet<Usuarios> User { get; set; }
+        public DbSet<Usuarios> Usuario { get; set; }
 
         public Contexto() : base("ConStr") { }
     }
