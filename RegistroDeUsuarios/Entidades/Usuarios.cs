@@ -12,18 +12,18 @@ namespace RegistroDeUsuarios.Entidades
     {
         [Key]
 
-        public int ID_Usuarios  { get; set; }
-        public String Nombre    { get; set; }
+        public int UsuariosId  { get; set; }
+        public String Nombres    { get; set; }
         public String Email     { get; set; }
         public String NivelUsuario { get; set; }
         public String Usuario   { get; set; }
         public String Clave     { get; set; }
         public DateTime FechaIngreso { get; set; }
 
-        public Usuarios(int id_usuarios, string nombre, string email, string nivelusuario, string usuario, string clave, DateTime fecha)
+        public Usuarios(int usuariosId, string nombres, string email, string nivelusuario, string usuario, string clave, DateTime fecha)
         {
-            this.ID_Usuarios = id_usuarios;
-            this.Nombre = nombre;
+            this.UsuariosId = usuariosId;
+            this.Nombres = nombres;
             this.Email = email;
             this.NivelUsuario = nivelusuario;
             this.Usuario = usuario;
@@ -33,8 +33,8 @@ namespace RegistroDeUsuarios.Entidades
 
         public Usuarios()
         {
-            ID_Usuarios = 0;
-            Nombre = String.Empty;
+            UsuariosId = 0;
+            Nombres = String.Empty;
             Email = String.Empty;
             NivelUsuario = String.Empty;
             Usuario = String.Empty;

@@ -141,7 +141,7 @@
             this.ButtonBuscar.TabIndex = 57;
             this.ButtonBuscar.Text = "Buscar";
             this.ButtonBuscar.UseVisualStyleBackColor = true;
-            this.ButtonBuscar.Click += new System.EventHandler(this.Button1_Click);
+            this.ButtonBuscar.Click += new System.EventHandler(this.ButtonBuscar_Click);
             // 
             // ButtonGuardar
             // 
