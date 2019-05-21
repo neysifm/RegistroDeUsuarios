@@ -20,15 +20,15 @@ namespace RegistroDeUsuarios.BLL
             try
             {
                 if (contexto.Usuario.Add(usuario) != null)
-                {
-                    contexto.SaveChanges();
-                    paso = true;
-                }
-                contexto.Dispose();
+                    paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                contexto.Dispose();
             }
             return paso;
         }
@@ -39,17 +39,18 @@ namespace RegistroDeUsuarios.BLL
             Contexto contexto = new Contexto();
             try
             {
-                Usuarios eliminar = contexto.Usuario.Find(Id);
-                contexto.Usuario.Remove(eliminar);
-                if (contexto.SaveChanges() > 0)
-                {
-                    paso = true;
-                }
-                contexto.Dispose();
+                var eliminar = contexto.Usuario.Find(Id);
+                contexto.Entry(eliminar).State = EntityState.Deleted;
+
+                paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                contexto.Dispose();
             }
             return paso;
         }
@@ -61,15 +62,15 @@ namespace RegistroDeUsuarios.BLL
             try
             {
                 contexto.Entry(usuario).State = EntityState.Modified;
-                if (contexto.SaveChanges() > 0)
-                {
-                      paso = true;
-                }
-                contexto.Dispose();
+                paso = contexto.SaveChanges() > 0;
             }
             catch (Exception)
             {
                 throw;
+            }
+            finally
+            {
+                contexto.Dispose();
             }
             return paso;
         }
@@ -81,29 +82,35 @@ namespace RegistroDeUsuarios.BLL
             try
             {
                 usuario = contexto.Usuario.Find(id);
-                contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
+            finally
+            {
+                contexto.Dispose();
+            }
             return usuario;
         }
 
-        public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> expression)
+        public static List<Usuarios> GetList(Expression<Func<Usuarios, bool>> usuario)
         {
-            List<Usuarios> usuario = new List<Usuarios>();
+            List<Usuarios> Lista = new List<Usuarios>();
             Contexto contexto = new Contexto();
             try
             {
-                usuario = contexto.Usuario.Where(expression).ToList();
-                contexto.Dispose();
+                Lista = contexto.Usuario.Where(usuario).ToList();
             }
             catch (Exception)
             {            
                 throw;
             }
-            return usuario;
+            finally
+            {
+                contexto.Dispose();
+            }
+            return Lista;
         }
     }
 }
