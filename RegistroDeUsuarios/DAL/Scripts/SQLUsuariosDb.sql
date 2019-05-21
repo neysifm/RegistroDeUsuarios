@@ -1,13 +1,12 @@
-CREATE DATABASE UsiariosDb
+CREATE DATABASE UsuariosDb
 GO
 
-USE UsiariosDb
-GO
+USE UsuariosDb
 
 CREATE TABLE Usuarios
 (
-	ID_Usuario INT PRIMARY KEY, 
-	Nombre VARCHAR(50), 
+	UsuarioId INT PRIMARY KEY, 
+	Nombres VARCHAR(50), 
 	Email VARCHAR(50), 
 	NivelUsuario VARCHAR(50),
 	Usuario VARCHAR(50), 
@@ -15,5 +14,12 @@ CREATE TABLE Usuarios
 	FechaIngreso DATE
 );
 GO
+
+CREATE TABLE cargos
+(
+	CargosId INT PRIMARY KEY,
+	Descripcion VARCHAR(MAX)
+);
+
 
 

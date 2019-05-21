@@ -41,13 +41,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.ButtonBuscar = new System.Windows.Forms.Button();
             this.ButtonGuardar = new System.Windows.Forms.Button();
-            this.ButtonEditar = new System.Windows.Forms.Button();
             this.ErrorProviderNombre = new System.Windows.Forms.ErrorProvider(this.components);
             this.ErrorProviderContraseña = new System.Windows.Forms.ErrorProvider(this.components);
             this.NumericUpDownID = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.ButtonEliminar = new System.Windows.Forms.Button();
             this.ErrorProviderID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ButtonNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderContraseña)).BeginInit();
@@ -135,7 +135,7 @@
             // 
             // ButtonBuscar
             // 
-            this.ButtonBuscar.Location = new System.Drawing.Point(49, 301);
+            this.ButtonBuscar.Location = new System.Drawing.Point(173, 92);
             this.ButtonBuscar.Name = "ButtonBuscar";
             this.ButtonBuscar.Size = new System.Drawing.Size(75, 23);
             this.ButtonBuscar.TabIndex = 57;
@@ -145,23 +145,13 @@
             // 
             // ButtonGuardar
             // 
-            this.ButtonGuardar.Location = new System.Drawing.Point(130, 301);
+            this.ButtonGuardar.Location = new System.Drawing.Point(173, 301);
             this.ButtonGuardar.Name = "ButtonGuardar";
             this.ButtonGuardar.Size = new System.Drawing.Size(75, 23);
             this.ButtonGuardar.TabIndex = 58;
             this.ButtonGuardar.Text = "Guardar";
             this.ButtonGuardar.UseVisualStyleBackColor = true;
             this.ButtonGuardar.Click += new System.EventHandler(this.ButtonGuardar_Click);
-            // 
-            // ButtonEditar
-            // 
-            this.ButtonEditar.Location = new System.Drawing.Point(211, 301);
-            this.ButtonEditar.Name = "ButtonEditar";
-            this.ButtonEditar.Size = new System.Drawing.Size(75, 23);
-            this.ButtonEditar.TabIndex = 59;
-            this.ButtonEditar.Text = "Editar";
-            this.ButtonEditar.UseVisualStyleBackColor = true;
-            this.ButtonEditar.Click += new System.EventHandler(this.ButtonEditar_Click);
             // 
             // ErrorProviderNombre
             // 
@@ -189,7 +179,7 @@
             // 
             // ButtonEliminar
             // 
-            this.ButtonEliminar.Location = new System.Drawing.Point(292, 301);
+            this.ButtonEliminar.Location = new System.Drawing.Point(279, 301);
             this.ButtonEliminar.Name = "ButtonEliminar";
             this.ButtonEliminar.Size = new System.Drawing.Size(75, 23);
             this.ButtonEliminar.TabIndex = 62;
@@ -201,15 +191,24 @@
             // 
             this.ErrorProviderID.ContainerControl = this;
             // 
+            // ButtonNuevo
+            // 
+            this.ButtonNuevo.Location = new System.Drawing.Point(75, 301);
+            this.ButtonNuevo.Name = "ButtonNuevo";
+            this.ButtonNuevo.Size = new System.Drawing.Size(75, 23);
+            this.ButtonNuevo.TabIndex = 63;
+            this.ButtonNuevo.Text = "Nuevo";
+            this.ButtonNuevo.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 399);
+            this.Controls.Add(this.ButtonNuevo);
             this.Controls.Add(this.ButtonEliminar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.NumericUpDownID);
-            this.Controls.Add(this.ButtonEditar);
             this.Controls.Add(this.ButtonGuardar);
             this.Controls.Add(this.ButtonBuscar);
             this.Controls.Add(this.label5);
@@ -246,13 +245,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button ButtonBuscar;
         private System.Windows.Forms.Button ButtonGuardar;
-        private System.Windows.Forms.Button ButtonEditar;
         private System.Windows.Forms.ErrorProvider ErrorProviderNombre;
         private System.Windows.Forms.ErrorProvider ErrorProviderContraseña;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown NumericUpDownID;
         private System.Windows.Forms.Button ButtonEliminar;
         private System.Windows.Forms.ErrorProvider ErrorProviderID;
+        private System.Windows.Forms.Button ButtonNuevo;
     }
 }
 
