@@ -15,7 +15,7 @@ CREATE TABLE Usuarios
 );
 GO
 
-CREATE TABLE cargos
+CREATE TABLE Cargos
 (
 	CargosId INT PRIMARY KEY,
 	Descripcion VARCHAR(MAX)
