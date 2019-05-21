@@ -19,5 +19,6 @@ namespace RegistroDeUsuarios.Entidades
             CargosId = 0;
             Descripcion = String.Empty;
         }
+
     }
 }
