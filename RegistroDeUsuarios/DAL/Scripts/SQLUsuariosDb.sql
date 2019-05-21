@@ -20,6 +20,7 @@ CREATE TABLE Cargos
 	CargosId INT PRIMARY KEY,
 	Descripcion VARCHAR(MAX)
 );
+GO
 
 
 
